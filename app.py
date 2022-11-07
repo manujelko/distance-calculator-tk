@@ -38,6 +38,8 @@ feet_display.grid(column=1, row=1, sticky="EW", padx=5, pady=5)
 
 calc_button.grid(column=0, row=2, columnspan=2, sticky="EW", padx=5, pady=5)
 
+root.bind("<Return>", calculate_feet)
+root.bind("<KP_Enter>", calculate_feet)
 
 
 if __name__ == "__main__":
