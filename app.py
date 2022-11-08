@@ -6,9 +6,15 @@ from tkinter import ttk
 class DistanceConverter(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
         self.title("Distance converter")
-        frame = MetersToFeet(self, padding=(60, 30))
-        frame.grid()
+
+        container = ttk.Frame(self)
+        container.grid(padx=60, pady=30, sticky="EW")
+
+        frame = MetersToFeet(self)
+        frame.grid(row=0, column=0, sticky="NSEW")
+
         self.bind("<Return>", frame.calculate_feet)
         self.bind("<KP_Enter>", frame.calculate_feet)
 
